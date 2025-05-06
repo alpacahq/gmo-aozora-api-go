@@ -8,6 +8,7 @@ import (
 	"io/ioutil"
 	"net/url"
 	"os"
+	"sync"
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gmoaozora/gmo-aozora-api-go/libs"
@@ -16,7 +17,10 @@ import (
 	try "gopkg.in/matryer/try.v1"
 )
 
-var config conf
+var (
+	config          conf
+	_loadConfigOnce sync.Once
+)
 
 // Ganb is our main struct
 type Ganb struct {
@@ -51,26 +55,30 @@ type conf struct {
 	JwtIssuer   string `json:"JWT_ISSUER"`
 }
 
-func init() {
-	// maybe read and load env variables from conf file
-	jsonFile, err := os.Open("./conf.json")
-	if err != nil {
-		fmt.Println(err)
-	}
-	defer jsonFile.Close()
-
-	byteValue, _ := ioutil.ReadAll(jsonFile)
-	json.Unmarshal([]byte(byteValue), &config)
-}
-
 func getState(sessionID string, salt string) string {
 	sum := sha256.Sum256([]byte(sessionID + salt))
 	return fmt.Sprintf("%x", sum)
 }
 
 // New setup the lib
-func New(clientID string, clientSecret string, nonceSave func(string) error, nonceCheck func(string) error) (Ganb, error) {
+func New(
+	clientID, clientSecret string,
+	nonceSave, nonceCheck func(string) error,
+) (Ganb, error) {
 	n := nonce{nonceCheck, nonceSave}
+
+	_loadConfigOnce.Do(func() {
+		jsonFile, err := os.Open("./conf.json")
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+		defer jsonFile.Close()
+
+		byteValue, _ := ioutil.ReadAll(jsonFile)
+		json.Unmarshal([]byte(byteValue), &config)
+	})
+
 	return Ganb{clientID, clientSecret, n}, nil
 }
 
@@ -232,7 +240,6 @@ func (g Ganb) RefreshTokens(refreshToken string) (Token, error) {
 		}
 
 		body, err := libs.Request("post", tokenURL, values, authHeader)
-
 		if err != nil {
 			fmt.Printf("\n\nRefresh token request error: %v", err)
 			return true, err
