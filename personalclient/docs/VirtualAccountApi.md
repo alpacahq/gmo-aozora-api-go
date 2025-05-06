@@ -68,7 +68,7 @@ import (
     "fmt"
 
     "github.com/antihax/optional"
-    "github.com/gmoaozora/gmo-aozora-api-go/personalclient"
+    "github.com/alpacahq/gmo-aozora-api-go/personalclient"
     "github.com/k0kubun/pp"
 )
 
@@ -97,7 +97,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  | 
+ **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  |
  **opts** | ***DepositTransactionsUsingGETOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -105,13 +105,13 @@ Optional parameters are passed through a pointer to a DepositTransactionsUsingGE
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vaContractAuthKey** | **optional.String**| 振込入金口座API認証情報 半角英数字 NULLを設定 値が設定されている場合は「400 Bad Request」を返却 minLength: 1 maxLength: 400  | 
- **raId** | **optional.String**| 入金口座ID 半角数字 入金先の口座を識別するID 本値が設定されていない場合、振込入金口座IDは必須 科目コードが以下の口座IDのみ受け付けます ・01&#x3D;普通預金（有利息） ・02&#x3D;普通預金（決済用）  minLength: 12 maxLength: 29  | 
- **vaId** | **optional.String**| 振込入金口座ID 半角数字 振込入金口座を識別するID 本値が設定されていない場合、入金口座IDは必須  minLength: 10 maxLength: 10  | 
- **dateFrom** | **optional.String**| 対象期間From 半角文字 YYYY-MM-DD形式 指定する場合は照会する日付より6ヶ月以内の日付とし、超えた場合は「400 Bad Request」を返却  minLength: 10 maxLength: 10  | 
- **dateTo** | **optional.String**| 対象期間To 半角文字 YYYY-MM-DD形式 指定する場合は照会する日付より6ヶ月以内の日付とし、超えた場合は「400 Bad Request」を返却 対象期間Fromと対象期間Toを指定する場合は、対象期間From≦対象期間Toとし、それ以外は「400 Bad Request」を返却  minLength: 10 maxLength: 10  | 
- **sortOrderCode** | **optional.String**| ソート順コード 半角数字 取引日のソート順を指定するコード値 ・1&#x3D;昇順 ・2&#x3D;降順  minLength: 1 maxLength: 1  | 
- **nextItemKey** | **optional.String**| 次明細キー 半角数字 初回要求時は未設定 初回応答で次明細キーが「true」の場合、返却された同項目を2回目以降に設定  minLength: 1 maxLength: 24  | 
+ **vaContractAuthKey** | **optional.String**| 振込入金口座API認証情報 半角英数字 NULLを設定 値が設定されている場合は「400 Bad Request」を返却 minLength: 1 maxLength: 400  |
+ **raId** | **optional.String**| 入金口座ID 半角数字 入金先の口座を識別するID 本値が設定されていない場合、振込入金口座IDは必須 科目コードが以下の口座IDのみ受け付けます ・01&#x3D;普通預金（有利息） ・02&#x3D;普通預金（決済用）  minLength: 12 maxLength: 29  |
+ **vaId** | **optional.String**| 振込入金口座ID 半角数字 振込入金口座を識別するID 本値が設定されていない場合、入金口座IDは必須  minLength: 10 maxLength: 10  |
+ **dateFrom** | **optional.String**| 対象期間From 半角文字 YYYY-MM-DD形式 指定する場合は照会する日付より6ヶ月以内の日付とし、超えた場合は「400 Bad Request」を返却  minLength: 10 maxLength: 10  |
+ **dateTo** | **optional.String**| 対象期間To 半角文字 YYYY-MM-DD形式 指定する場合は照会する日付より6ヶ月以内の日付とし、超えた場合は「400 Bad Request」を返却 対象期間Fromと対象期間Toを指定する場合は、対象期間From≦対象期間Toとし、それ以外は「400 Bad Request」を返却  minLength: 10 maxLength: 10  |
+ **sortOrderCode** | **optional.String**| ソート順コード 半角数字 取引日のソート順を指定するコード値 ・1&#x3D;昇順 ・2&#x3D;降順  minLength: 1 maxLength: 1  |
+ **nextItemKey** | **optional.String**| 次明細キー 半角数字 初回要求時は未設定 初回応答で次明細キーが「true」の場合、返却された同項目を2回目以降に設定  minLength: 1 maxLength: 24  |
 
 ### Return type
 
@@ -149,7 +149,7 @@ No authorization required
 * 例）
   * ○ `「ﾃｽﾄﾆｭｳｷﾝｸﾞﾁ 」`
   * × `「ﾃｽﾄﾆｭｳｷﾝｸﾞﾁ_ 」`
-  
+
 * 追加名義カナの左側は許容しません
 * 例）
   * ○ `「ﾃｽﾄﾆｭｳｷﾝｸﾞﾁ」`
@@ -171,7 +171,7 @@ import (
     "fmt"
 
     "github.com/antihax/optional"
-    "github.com/gmoaozora/gmo-aozora-api-go/personalclient"
+    "github.com/alpacahq/gmo-aozora-api-go/personalclient"
     "github.com/k0kubun/pp"
 )
 
@@ -201,7 +201,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  | 
+ **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  |
  **opts** | ***IssueUsingPOSTOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -209,7 +209,7 @@ Optional parameters are passed through a pointer to a IssueUsingPOSTOpts struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**optional.Interface of VaIssueRequest**](VaIssueRequest.md)| HTTPリクエストボディ | 
+ **body** | [**optional.Interface of VaIssueRequest**](VaIssueRequest.md)| HTTPリクエストボディ |
 
 ### Return type
 
@@ -249,7 +249,7 @@ import (
     "fmt"
 
     "github.com/antihax/optional"
-    "github.com/gmoaozora/gmo-aozora-api-go/personalclient"
+    "github.com/alpacahq/gmo-aozora-api-go/personalclient"
     "github.com/k0kubun/pp"
 )
 
@@ -259,7 +259,7 @@ func main() {
     apiAccount := apiClinent.VirtualAccountApi
 
     ctx := context.Background()
-    
+
     xAccessToken := "xAccessToken_example"
 
     vaId := swagger.VaId{VaId: "VaId_example"}
@@ -281,7 +281,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  | 
+ **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  |
  **opts** | ***StatusChangeUsingPOSTOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -289,7 +289,7 @@ Optional parameters are passed through a pointer to a StatusChangeUsingPOSTOpts 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**optional.Interface of VaStatusChangeRequest**](VaStatusChangeRequest.md)| HTTPリクエストボディ | 
+ **body** | [**optional.Interface of VaStatusChangeRequest**](VaStatusChangeRequest.md)| HTTPリクエストボディ |
 
 ### Return type
 
@@ -326,7 +326,7 @@ import (
     "fmt"
 
     "github.com/antihax/optional"
-    "github.com/gmoaozora/gmo-aozora-api-go/personalclient"
+    "github.com/alpacahq/gmo-aozora-api-go/personalclient"
     "github.com/k0kubun/pp"
 )
 
@@ -356,7 +356,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  | 
+ **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  |
  **opts** | ***VaCloseRequestUsingPOSTOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -364,7 +364,7 @@ Optional parameters are passed through a pointer to a VaCloseRequestUsingPOSTOpt
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**optional.Interface of VaCloseRequest**](VaCloseRequest.md)| HTTPリクエストボディ | 
+ **body** | [**optional.Interface of VaCloseRequest**](VaCloseRequest.md)| HTTPリクエストボディ |
 
 ### Return type
 
@@ -461,7 +461,7 @@ import (
     "fmt"
 
     "github.com/antihax/optional"
-    "github.com/gmoaozora/gmo-aozora-api-go/personalclient"
+    "github.com/alpacahq/gmo-aozora-api-go/personalclient"
     "github.com/k0kubun/pp"
 )
 
@@ -492,7 +492,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  | 
+ **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  |
  **opts** | ***VaListUsingPOSTOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -500,7 +500,7 @@ Optional parameters are passed through a pointer to a VaListUsingPOSTOpts struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**optional.Interface of VaListRequest**](VaListRequest.md)| HTTPリクエストボディ | 
+ **body** | [**optional.Interface of VaListRequest**](VaListRequest.md)| HTTPリクエストボディ |
 
 ### Return type
 

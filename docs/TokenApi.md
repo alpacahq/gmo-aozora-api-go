@@ -24,8 +24,8 @@ package main
 
 import (
     "fmt"
-    
-    "github.com/gmoaozora/gmo-aozora-api-go"
+
+    "github.com/alpacahq/gmo-aozora-api-go"
 )
 
 func nonceCheckAndDelete(nonce string) error {
@@ -63,8 +63,8 @@ package main
 
 import (
     "fmt"
-    
-    "github.com/gmoaozora/gmo-aozora-api-go"
+
+    "github.com/alpacahq/gmo-aozora-api-go"
 )
 
 func nonceCheckAndDelete(nonce string) error {
@@ -85,7 +85,7 @@ func main() {
     }
 
     refreshToken := "refreshToken_example"
-    
+
     new_token, err := ganb.RefreshTokens(refreshToken)
     if err != nil {
         fmt.Println(err)
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
  **code** | **string** | 新規発行時のみ必須 認可エンドポイントにて当社から返却した認可コード minLength: 1 maxLength: 128 |
  **authMethod** | **string** | 事前に登録したクライアント認証方式。ベーシック認証: 「basic」、クライアントシークレット認証: 「post」 |
  **nonceSave** | **function** | 貴社にて実装。nonce値を保存するための関数。 |
- **nonceCheckAndDelete** | **function** | 貴社にて実装。返却されたnonce値を検証し、その後削除するための関数。 | 
+ **nonceCheckAndDelete** | **function** | 貴社にて実装。返却されたnonce値を検証し、その後削除するための関数。 |
  **nonce** | **string**| Client セッションと ID Token を紐づける文字列。設定された場合はそのままの値をID Tokenに含めて返却する。 リプレイアタック攻撃を防止するため、リクエスト毎にランダム値(十分な不規則性となる値)を設定し ID Tokenに含まれるnonce値が認可エンドポイントリクエスト時と同一であることを一度だけ検証するために利用する項目。  minLength: 1 maxLength: 128  | [optional]
  **refreshToken** | **string** | 新しいアクセストークンを取得する際に使用するリフレッシュトークン。 |
 
