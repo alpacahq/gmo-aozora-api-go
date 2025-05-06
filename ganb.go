@@ -11,10 +11,11 @@ import (
 	"sync"
 
 	"github.com/dgrijalva/jwt-go"
-	"github.com/gmoaozora/gmo-aozora-api-go/libs"
 	"github.com/google/uuid"
 	"github.com/pkg/errors"
 	try "gopkg.in/matryer/try.v1"
+
+	"github.com/alpacahq/gmo-aozora-api-go/libs"
 )
 
 var (

@@ -5,7 +5,6 @@ go 1.24
 require (
 	github.com/antihax/optional v1.0.0
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
-	github.com/gmoaozora/gmo-aozora-api-go v0.0.0-20221004015719-60d39f300868
 	github.com/google/uuid v1.6.0
 	github.com/pkg/errors v0.9.1
 	golang.org/x/oauth2 v0.30.0
