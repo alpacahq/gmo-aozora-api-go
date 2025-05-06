@@ -71,6 +71,7 @@ func New(
 		jsonFile, err := os.Open("./conf.json")
 		if err != nil {
 			fmt.Println(err)
+			return
 		}
 		defer jsonFile.Close()
 
