@@ -21,7 +21,7 @@ Golang 1.8+
 ## Installation
 
 - get the repository from *Github*\
-  `$ go get github.com/gmoaozora/gmo-aozora-api-go`
+  `$ go get github.com/alpacahq/gmo-aozora-api-go`
 
 - get a package with the following command \
   `$ go get github.com/antihax/optional`
@@ -45,16 +45,16 @@ Add the configuration below into your config file\
         "SALT": "PleaseDefineYourself"
     }
     ```
-    
-    [configuration.go - Personal ](./personalclient/configuration.go) 
+
+    [configuration.go - Personal ](./personalclient/configuration.go)
     ```go
 		BasePath:      "https://stg-api.gmo-aozora.com/ganb/api/personal/v1",
     ```
-    [configuration.go - Corporate ](./corporateclient/configuration.go) 
+    [configuration.go - Corporate ](./corporateclient/configuration.go)
     ```go
 		BasePath:      "https://stg-api.gmo-aozora.com/ganb/api/corporation/v1",
     ```
-    [configuration.go - Webhook ](./webhookclient/configuration.go) 
+    [configuration.go - Webhook ](./webhookclient/configuration.go)
     ```go
 		BasePath:      "https://stg-api.gmo-aozora.com/ganb/api/webhooks/v1",
     ```
@@ -72,15 +72,15 @@ Add the configuration below into your config file\
         "SALT": "PleaseDefineYourself"
     }
     ```
-    [configuration.go - Personal ](./personalclient/configuration.go) 
+    [configuration.go - Personal ](./personalclient/configuration.go)
     ```go
 		BasePath:      "https://api.gmo-aozora.com/ganb/api/personal/v1",
     ```
-    [configuration.go - Corporate ](./corporateclient/configuration.go) 
+    [configuration.go - Corporate ](./corporateclient/configuration.go)
     ```go
 		BasePath:      "https://api.gmo-aozora.com/ganb/api/corporation/v1",
     ```
-    [configuration.go - Webhook ](./webhookclient/configuration.go) 
+    [configuration.go - Webhook ](./webhookclient/configuration.go)
     ```go
 		BasePath:      "https://api.gmo-aozora.com/ganb/api/webhooks/v1",
     ```
@@ -99,4 +99,4 @@ GMO Aozora Net Bank, Ltd. (open-api@gmo-aozora.com)
 
 ## Licence
 
-[MIT](https://github.com/gmoaozora/gmo-aozora-api-go/blob/master/LICENSE)
+[MIT](https://github.com/alpacahq/gmo-aozora-api-go/blob/master/LICENSE)

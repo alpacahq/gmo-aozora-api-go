@@ -24,8 +24,8 @@ import (
     "fmt"
     "io"
     "os"
-    
-    "github.com/gmoaozora/gmo-aozora-api-go"
+
+    "github.com/alpacahq/gmo-aozora-api-go"
 )
 
 func nonceCheckAndDelete(nonce string) error {
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
  **scope** | **string**| 要求されるアクセス権限を示すスコープID。 複数設定する場合は半角スペース区切りにて連結。 リフレッシュトークンを発行する場合は offline_access scope値が必要。  minLength: 1 maxLength: 256  |
  **redirectUri** | **string**| 貴社が指定する認可コードをリダイレクトするためのURI  minLength: 1 maxLength: 256  |
  **nonceSave** | **function** | 貴社にて実装。nonce値を保存するための関数。 |
- **nonceCheckAndDelete** | **function** | 貴社にて実装。返却されたnonce値を検証し、その後削除するための関数。 | 
+ **nonceCheckAndDelete** | **function** | 貴社にて実装。返却されたnonce値を検証し、その後削除するための関数。 |
  **nonce** | **string**| Client セッションと ID Token を紐づける文字列。設定された場合はそのままの値をID Tokenに含めて返却する。 リプレイアタック攻撃を防止するため、リクエスト毎にランダム値(十分な不規則性となる値)を設定し ID Tokenに含まれるnonce値が認可エンドポイントリクエスト時と同一であることを一度だけ検証するために利用する項目。  minLength: 1 maxLength: 128  | [optional]
 
 ### Return type

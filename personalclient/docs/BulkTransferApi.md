@@ -47,7 +47,7 @@ import (
     "context"
     "fmt"
 
-    "github.com/gmoaozora/gmo-aozora-api-go/personalclient"
+    "github.com/alpacahq/gmo-aozora-api-go/personalclient"
     "github.com/k0kubun/pp"
 )
 
@@ -76,8 +76,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**TransferCancelRequest**](TransferCancelRequest.md)| HTTPリクエストボディ | 
-  **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  | 
+  **body** | [**TransferCancelRequest**](TransferCancelRequest.md)| HTTPリクエストボディ |
+  **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  |
 
 ### Return type
 
@@ -115,7 +115,7 @@ import (
     "context"
     "fmt"
 
-    "github.com/gmoaozora/gmo-aozora-api-go/personalclient"
+    "github.com/alpacahq/gmo-aozora-api-go/personalclient"
     "github.com/k0kubun/pp"
 )
 
@@ -147,8 +147,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-  **body** | [**BulkTransferRequest**](BulkTransferRequest.md)| HTTPリクエストボディ | 
-  **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  | 
+  **body** | [**BulkTransferRequest**](BulkTransferRequest.md)| HTTPリクエストボディ |
+  **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  |
 
 ### Return type
 
@@ -183,7 +183,7 @@ import (
     "context"
     "fmt"
 
-    "github.com/gmoaozora/gmo-aozora-api-go/personalclient"
+    "github.com/alpacahq/gmo-aozora-api-go/personalclient"
     "github.com/k0kubun/pp"
 )
 
@@ -212,9 +212,9 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **accountId** | **string**| 口座ID 半角数字 口座を識別するID  minLength: 12 maxLength: 29  | 
- **applyNo** | **string**| 受付番号（振込申請番号） 半角数字 すべての振込・総合振込で採番される、照会の基本単位となる番号  minLength: 16 maxLength: 16  | 
- **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  | 
+ **accountId** | **string**| 口座ID 半角数字 口座を識別するID  minLength: 12 maxLength: 29  |
+ **applyNo** | **string**| 受付番号（振込申請番号） 半角数字 すべての振込・総合振込で採番される、照会の基本単位となる番号  minLength: 16 maxLength: 16  |
+ **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  |
 
 ### Return type
 
@@ -248,7 +248,7 @@ import (
     "context"
     "fmt"
 
-    "github.com/gmoaozora/gmo-aozora-api-go/personalclient"
+    "github.com/alpacahq/gmo-aozora-api-go/personalclient"
     "github.com/k0kubun/pp"
 )
 
@@ -280,8 +280,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **body** | [**BulkTransferRequest**](BulkTransferRequest.md)| HTTPリクエストボディ | 
- **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  | 
+ **body** | [**BulkTransferRequest**](BulkTransferRequest.md)| HTTPリクエストボディ |
+ **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  |
 
 ### Return type
 
@@ -361,7 +361,7 @@ import (
     "fmt"
 
     "github.com/antihax/optional"
-    "github.com/gmoaozora/gmo-aozora-api-go/personalclient"
+    "github.com/alpacahq/gmo-aozora-api-go/personalclient"
     "github.com/k0kubun/pp"
 )
 
@@ -392,9 +392,9 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **accountId** | **string**| 口座ID 半角数字 口座を識別するID  minLength: 12 maxLength: 29  | 
- **queryKeyClass** | **string**| 照会対象キー区分 半角数字 照会対象のキー 1：振込申請照会対象指定、2：振込一括照会対象指定  minLength: 1 maxLength: 1  | 
- **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  | 
+ **accountId** | **string**| 口座ID 半角数字 口座を識別するID  minLength: 12 maxLength: 29  |
+ **queryKeyClass** | **string**| 照会対象キー区分 半角数字 照会対象のキー 1：振込申請照会対象指定、2：振込一括照会対象指定  minLength: 1 maxLength: 1  |
+ **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  |
  **optional** | ***BulkTransferStatusUsingGETOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -402,15 +402,15 @@ Optional parameters are passed through a pointer to a BulkTransferStatusUsingGET
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **detailInfoNecessity** | **optional.Bool**| 明細情報取得フラグ 総合振込明細情報の取得要否 照会対象キー区分が、1のときは「True：取得する」を指定可 それ以外で「True：取得する」が設定されている場合は、「400 Bad Request」を返却 True：取得する、False:取得しない　省略/NULLは　false扱い  | 
- **bulktransferItemKey** | **optional.String**| 総合振込明細情報取得対象キー 半角数字 明細情報取得フラグが、「True：取得する」のとき指定可 それ以外はNULLを設定（値が設定されている場合は、「400 Bad Request」を返却） 総合振込明細情報を取得するときに取得を開始する番号 明細情報取得フラグが、「True：取得する」のときの省略/NULLは1扱い 1500明細を取得する場合、は以下のように設定 1電文目：1 2電文目：501 3電文目：1001  minLength: 1 maxLength: 6  | 
- **applyNo** | **optional.String**| 受付番号（振込申請番号） 半角数字 照会対象の番号を設定 照会対象キー区分が、1のときは必須 それ以外はNULLを設定（値が設定されている場合は、「400 Bad Request」を返却）  minLength: 16 maxLength: 16  | 
- **dateFrom** | **optional.String**| 対象期間From 半角文字 YYYY-MM-DD形式 照会対象キー区分が、2のときは入力可 それ以外はNULLを設定（値が設定されている場合は、「400 Bad Request」を返却）              minLength: 10 maxLength: 10  | 
- **dateTo** | **optional.String**| 対象期間To 半角文字 YYYY-MM-DD形式 照会対象キー区分が、2のときは入力可 それ以外はNULLを設定（値が設定されている場合は、「400 Bad Request」を返却） 対象期間Fromと対象期間Toを指定する場合は、対象期間From≦対象期間Toとし、それ以外は「400 Bad Request」を返却  minLength: 10 maxLength: 10  | 
- **nextItemKey** | **optional.String**| 次明細キー 半角数字 照会対象キー区分が、2のときは入力可 それ以外はNULLを設定（値が設定されている場合は、「400 Bad Request」を返却）              minLength: 1 maxLength: 24  | 
- **requestTransferStatus** | [**optional.Interface of []string**](string.md)| 照会対象ステータス  半角数字  2:申請中、3:差戻、4:取下げ、5:期限切れ、8:承認取消/予約取消、  11:予約中、12:手続中、13:リトライ中、  20:手続済、30:不能・組戻あり、40:手続不成立   照会対象キー区分が、2のときは設定可  それ以外は設定しません（値が設定されている場合は、「400 Bad Request」を返却）  配列のため、複数設定した場合は対象のステータスをOR条件で検索します  省略した場合は全てを設定したものとみなします  minLength: 1 maxLength: 3  | 
- **requestTransferClass** | **optional.String**| 振込照会対象取得区分 半角数字 1：ALL、2：振込申請のみ、3：振込受付情報のみ NULLを設定(値が設定されている場合は、「400 Bad Request」を返却) 照会対象キー区分が、2のときに指定しない場合は1と扱います minLength: 1 maxLength: 1  | 
- **requestTransferTerm** | **optional.String**| 振込照会対象期間区分 半角数字 対象期間Fromと対象期間Toで指定する日付の区分 1：振込申請受付日　2：振込指定日 照会対象キー区分が2のときのみ入力可 それ以外はNULLを設定（値が設定されている場合は、「400 Bad Request」を返却） 照会対象キー区分が、2のときに指定しない場合は1と扱います  minLength: 1 maxLength: 1  | 
+ **detailInfoNecessity** | **optional.Bool**| 明細情報取得フラグ 総合振込明細情報の取得要否 照会対象キー区分が、1のときは「True：取得する」を指定可 それ以外で「True：取得する」が設定されている場合は、「400 Bad Request」を返却 True：取得する、False:取得しない　省略/NULLは　false扱い  |
+ **bulktransferItemKey** | **optional.String**| 総合振込明細情報取得対象キー 半角数字 明細情報取得フラグが、「True：取得する」のとき指定可 それ以外はNULLを設定（値が設定されている場合は、「400 Bad Request」を返却） 総合振込明細情報を取得するときに取得を開始する番号 明細情報取得フラグが、「True：取得する」のときの省略/NULLは1扱い 1500明細を取得する場合、は以下のように設定 1電文目：1 2電文目：501 3電文目：1001  minLength: 1 maxLength: 6  |
+ **applyNo** | **optional.String**| 受付番号（振込申請番号） 半角数字 照会対象の番号を設定 照会対象キー区分が、1のときは必須 それ以外はNULLを設定（値が設定されている場合は、「400 Bad Request」を返却）  minLength: 16 maxLength: 16  |
+ **dateFrom** | **optional.String**| 対象期間From 半角文字 YYYY-MM-DD形式 照会対象キー区分が、2のときは入力可 それ以外はNULLを設定（値が設定されている場合は、「400 Bad Request」を返却）              minLength: 10 maxLength: 10  |
+ **dateTo** | **optional.String**| 対象期間To 半角文字 YYYY-MM-DD形式 照会対象キー区分が、2のときは入力可 それ以外はNULLを設定（値が設定されている場合は、「400 Bad Request」を返却） 対象期間Fromと対象期間Toを指定する場合は、対象期間From≦対象期間Toとし、それ以外は「400 Bad Request」を返却  minLength: 10 maxLength: 10  |
+ **nextItemKey** | **optional.String**| 次明細キー 半角数字 照会対象キー区分が、2のときは入力可 それ以外はNULLを設定（値が設定されている場合は、「400 Bad Request」を返却）              minLength: 1 maxLength: 24  |
+ **requestTransferStatus** | [**optional.Interface of []string**](string.md)| 照会対象ステータス  半角数字  2:申請中、3:差戻、4:取下げ、5:期限切れ、8:承認取消/予約取消、  11:予約中、12:手続中、13:リトライ中、  20:手続済、30:不能・組戻あり、40:手続不成立   照会対象キー区分が、2のときは設定可  それ以外は設定しません（値が設定されている場合は、「400 Bad Request」を返却）  配列のため、複数設定した場合は対象のステータスをOR条件で検索します  省略した場合は全てを設定したものとみなします  minLength: 1 maxLength: 3  |
+ **requestTransferClass** | **optional.String**| 振込照会対象取得区分 半角数字 1：ALL、2：振込申請のみ、3：振込受付情報のみ NULLを設定(値が設定されている場合は、「400 Bad Request」を返却) 照会対象キー区分が、2のときに指定しない場合は1と扱います minLength: 1 maxLength: 1  |
+ **requestTransferTerm** | **optional.String**| 振込照会対象期間区分 半角数字 対象期間Fromと対象期間Toで指定する日付の区分 1：振込申請受付日　2：振込指定日 照会対象キー区分が2のときのみ入力可 それ以外はNULLを設定（値が設定されている場合は、「400 Bad Request」を返却） 照会対象キー区分が、2のときに指定しない場合は1と扱います  minLength: 1 maxLength: 1  |
 
 ### Return type
 

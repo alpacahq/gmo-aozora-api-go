@@ -23,7 +23,7 @@ import (
     "context"
     "fmt"
 
-    "github.com/gmoaozora/gmo-aozora-api-go/webhookclient"
+    "github.com/alpacahq/gmo-aozora-api-go/webhookclient"
     "github.com/k0kubun/pp"
 )
 
@@ -54,8 +54,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **authorization** | **string**| 認証情報 銀行システムが配信先システムに発行した、クライアントIDとクライアントシーレットを:(コロン)で連結し、Base64エンコードした値を設定 minLength: ‐ maxLength: ‐  | 
- **body** | [**SubscribeRequestBody**](SubscribeRequestBody.md)| HTTPリクエストボディ | 
+ **authorization** | **string**| 認証情報 銀行システムが配信先システムに発行した、クライアントIDとクライアントシーレットを:(コロン)で連結し、Base64エンコードした値を設定 minLength: ‐ maxLength: ‐  |
+ **body** | [**SubscribeRequestBody**](SubscribeRequestBody.md)| HTTPリクエストボディ |
 
 ### Return type
 
@@ -97,7 +97,7 @@ package main
 import (
     "context"
 
-    "github.com/gmoaozora/gmo-aozora-api-go/webhookclient"
+    "github.com/alpacahq/gmo-aozora-api-go/webhookclient"
     "github.com/k0kubun/pp"
 )
 
@@ -125,7 +125,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **authorization** | **string**| 認証情報 銀行システムが配信先システムに発行した、クライアントIDとクライアントシーレットを:(コロン)で連結し、Base64エンコードした値を設定 minLength: ‐ maxLength: ‐  | 
+ **authorization** | **string**| 認証情報 銀行システムが配信先システムに発行した、クライアントIDとクライアントシーレットを:(コロン)で連結し、Base64エンコードした値を設定 minLength: ‐ maxLength: ‐  |
 
 ### Return type
 

@@ -52,9 +52,9 @@ package main
 import (
     "context"
     "fmt"
-    
+
     "github.com/antihax/optional"
-    "github.com/gmoaozora/gmo-aozora-api-go/corporateclient"
+    "github.com/alpacahq/gmo-aozora-api-go/corporateclient"
     "github.com/k0kubun/pp"
 )
 
@@ -84,8 +84,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **accountId** | **string**| 口座ID 半角数字 口座を識別するID  minLength: 12 maxLength: 29  | 
- **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  | 
+ **accountId** | **string**| 口座ID 半角数字 口座を識別するID  minLength: 12 maxLength: 29  |
+ **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  |
  **opts** | ***AccountsDepositTransactionsUsingGETOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -93,9 +93,9 @@ Optional parameters are passed through a pointer to a AccountsDepositTransaction
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dateFrom** | **optional.String**| 対象期間From 半角文字 YYYY-MM-DD形式  minLength: 10 maxLength: 10  | 
- **dateTo** | **optional.String**| 対象期間To 半角文字 YYYY-MM-DD形式  対象期間Fromと対象期間Toを指定する場合は、対象期間From≦対象期間Toとし、それ以外は「400 Bad Request」を返却  minLength: 10 maxLength: 10  | 
- **nextItemKey** | **optional.String**| 次明細キー 半角数字 初回要求時は未設定 初回応答で次明細フラグが「true」の場合、返却された同項目を2回目以降に設定  minLength: 1 maxLength: 24  | 
+ **dateFrom** | **optional.String**| 対象期間From 半角文字 YYYY-MM-DD形式  minLength: 10 maxLength: 10  |
+ **dateTo** | **optional.String**| 対象期間To 半角文字 YYYY-MM-DD形式  対象期間Fromと対象期間Toを指定する場合は、対象期間From≦対象期間Toとし、それ以外は「400 Bad Request」を返却  minLength: 10 maxLength: 10  |
+ **nextItemKey** | **optional.String**| 次明細キー 半角数字 初回要求時は未設定 初回応答で次明細フラグが「true」の場合、返却された同項目を2回目以降に設定  minLength: 1 maxLength: 24  |
 
 ### Return type
 
@@ -127,7 +127,7 @@ import (
     "context"
     "fmt"
 
-    "github.com/gmoaozora/gmo-aozora-api-go/corporateclient"
+    "github.com/alpacahq/gmo-aozora-api-go/corporateclient"
     "github.com/k0kubun/pp"
 )
 
@@ -154,7 +154,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  | 
+ **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  |
 
 ### Return type
 
@@ -178,7 +178,7 @@ No authorization required
 
 保有する口座の残高情報を照会します
 * 口座IDを指定した場合、該当する口座の残高情報を照会します
-* 口座IDを指定しない場合、保有する口座全ての残高情報を照会します 
+* 口座IDを指定しない場合、保有する口座全ての残高情報を照会します
 
 ### Example
 ```go
@@ -187,9 +187,9 @@ package main
 import (
     "context"
     "fmt"
-    
+
     "github.com/antihax/optional"
-    "github.com/gmoaozora/gmo-aozora-api-go/corporateclient"
+    "github.com/alpacahq/gmo-aozora-api-go/corporateclient"
     "github.com/k0kubun/pp"
 )
 
@@ -218,7 +218,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  | 
+ **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128  |
  **opts** | ***BalancesUsingGETOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -226,7 +226,7 @@ Optional parameters are passed through a pointer to a BalancesUsingGETOpts struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accountId** | **optional.String**| 口座ID 口座を識別するID  minLength: 12 maxLength: 29  | 
+ **accountId** | **optional.String**| 口座ID 口座を識別するID  minLength: 12 maxLength: 29  |
 
 ### Return type
 
@@ -287,7 +287,7 @@ import (
     "fmt"
 
     "github.com/antihax/optional"
-    "github.com/gmoaozora/gmo-aozora-api-go/corporateclient"
+    "github.com/alpacahq/gmo-aozora-api-go/corporateclient"
     "github.com/k0kubun/pp"
 )
 
@@ -317,8 +317,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
- **accountId** | **string**| 口座ID 半角英数字 口座を識別するID  科目コードが以下の場合のみ受け付けます ・01&#x3D;普通預金（有利息） ・02&#x3D;普通預金（決済用）  minLength: 12 maxLength: 29  | 
- **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128             | 
+ **accountId** | **string**| 口座ID 半角英数字 口座を識別するID  科目コードが以下の場合のみ受け付けます ・01&#x3D;普通預金（有利息） ・02&#x3D;普通預金（決済用）  minLength: 12 maxLength: 29  |
+ **xAccessToken** | **string**| アクセストークン  minLength: 1 maxLength: 128             |
  **opts** | ***TransactionsUsingGETOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -326,9 +326,9 @@ Optional parameters are passed through a pointer to a TransactionsUsingGETOpts s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dateFrom** | **optional.String**| 対象期間From 半角文字 YYYY-MM-DD形式  minLength: 10 maxLength: 10  | 
- **dateTo** | **optional.String**| 対象期間To 半角文字 YYYY-MM-DD形式 対象期間Fromと対象期間Toを指定する場合は、対象期間From≦対象期間Toとし、それ以外は「400 Bad Request」を返却  minLength: 10 maxLength: 10  | 
- **nextItemKey** | **optional.String**| 次明細キー 半角数字 初回要求時は未設定 初回応答で次明細キーが「true」の場合、返却された同項目を2回目以降に設定  minLength: 1 maxLength: 24  | 
+ **dateFrom** | **optional.String**| 対象期間From 半角文字 YYYY-MM-DD形式  minLength: 10 maxLength: 10  |
+ **dateTo** | **optional.String**| 対象期間To 半角文字 YYYY-MM-DD形式 対象期間Fromと対象期間Toを指定する場合は、対象期間From≦対象期間Toとし、それ以外は「400 Bad Request」を返却  minLength: 10 maxLength: 10  |
+ **nextItemKey** | **optional.String**| 次明細キー 半角数字 初回要求時は未設定 初回応答で次明細キーが「true」の場合、返却された同項目を2回目以降に設定  minLength: 1 maxLength: 24  |
 
 ### Return type
 
@@ -390,7 +390,7 @@ import (
     "fmt"
 
     "github.com/antihax/optional"
-    "github.com/gmoaozora/gmo-aozora-api-go/corporateclient"
+    "github.com/alpacahq/gmo-aozora-api-go/corporateclient"
     "github.com/k0kubun/pp"
 )
 
