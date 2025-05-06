@@ -83,6 +83,10 @@ func New(
 	return Ganb{clientID, clientSecret, n}, nil
 }
 
+func (g Ganb) ShowConfig() conf {
+	return config
+}
+
 // authorizationHeader return a Basic authorization header
 func (g Ganb) authorizationHeader() string {
 	msg := fmt.Sprintf("%v:%v", g.clientID, g.clientSecret)
@@ -223,8 +227,8 @@ func (g Ganb) isTokenValid(IDToken string) error {
 	return nil
 }
 
-// RefreshToken refresh the session using a refresh token
-func (g Ganb) RefreshTokens(refreshToken string) (Token, error) {
+// RefreshTokens refreshes the session using a refresh token
+func (g Ganb) RefreshTokens(refreshToken, authMethod string) (Token, error) {
 	fmt.Println("### refreshTokens")
 	const CounterMaxTries = 3
 
@@ -234,10 +238,15 @@ func (g Ganb) RefreshTokens(refreshToken string) (Token, error) {
 		authHeader := g.authorizationHeader()
 
 		values := url.Values{
-			"client_id":     {g.clientID},
-			"client_secret": {g.clientSecret},
 			"grant_type":    {"refresh_token"},
 			"refresh_token": {refreshToken},
+		}
+
+		if authMethod == "basic" {
+			authHeader = g.authorizationHeader()
+		} else {
+			values.Add("client_id", g.clientID)
+			values.Add("client_secret", g.clientSecret)
 		}
 
 		body, err := libs.Request("post", tokenURL, values, authHeader)
